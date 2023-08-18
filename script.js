@@ -12,7 +12,7 @@ function scheduleAudio() {
       icon: 'success',
       timer: 3000
     });
-    document.getElementById("warning-text").innerHTML = "กำลังจะเล่นไฟล์ : " + audio + "  ในเวลา :  " + time;
+    document.getElementById("alert-text").innerHTML = "กำลังจะเล่นไฟล์ : " + audio + "  ในเวลา :  " + time;
     
 
   var scheduledTime = new Date();
@@ -33,6 +33,7 @@ function scheduleAudio() {
       timer: 3000
     });
     document.getElementById("alert-text").innerHTML = "กำลังเล่นไฟล์ : " + audio;
+    document.getElementById("status").innerHTML = "🔴 (กำลังเล่นไฟล์) "
   }, timeUntilPlay);
 }
 
@@ -48,4 +49,5 @@ function scheduleAudio() {
       audioPlayer.pause();
       audioPlayer.currentTime = 0;
       document.getElementById("alert-text").innerHTML = "หยุดเล่นไฟล์";
+      document.getElementById("status").innerHTML = "🟢 (Available) "
     }

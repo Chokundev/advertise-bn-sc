@@ -39,6 +39,21 @@
     body {
       font-family: 'Chakra Petch', sans-serif;
     }
+
+    .blink {
+        animation: blink-animation 1s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
   </style>
 
 
@@ -79,6 +94,17 @@
 
         <li class="mt-0.5 w-full">
           <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+            href="https://bn-sc.cloud">
+            <div
+              class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+
+            </div>
+            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">เว็บคณะกรรมการนักเรียน</span>
+          </a>
+        </li>
+
+        <li class="mt-0.5 w-full">
+          <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
             href="https://cleaning.bn-sc.cloud">
             <div
               class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -99,27 +125,8 @@
           </a>
         </li>
 
-        <li class="mt-0.5 w-full">
-          <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-            href="https://bn-sc.cloud">
-            <div
-              class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+        
 
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">เว็บคณะกรรมการนักเรียน</span>
-          </a>
-        </li>
-
-        <!-- <li class="mt-0.5 w-full">
-          <a class=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-            href="https://bn-sc.cloud/voiceover">
-            <div
-              class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-
-            </div>
-            <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">เสียงพากษ์บทละคร</span>
-          </a>
-        </li> -->
   </aside>
 
   <!-- end sidenav -->
@@ -174,15 +181,12 @@
     <!-- end Navbar -->
 
     <div class="w-full px-6 py-6 mx-auto">
-      <!-- table 1 -->
-
-
       <div class="flex flex-wrap -mx-3">
         <div class="flex-none w-full max-w-full px-3">
           <div
             class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-              <h6 class="dark:text-white">[เมนู] : ระบบตั้งเวลาเปิดเพลง </h6> <br />
+              <h6 class="dark:text-white">[เมนู] : ระบบตั้งเวลาเปิดเพลง <span class="blink" id="status">🟢 (Available)</span></h6> <br />
               <center>
                 <div
                   class="border border border-yellow-400 rounded-b bg-yellow-100 px-1 py-1 text-yellow-700 rounded-lg mx-auto"
@@ -220,41 +224,31 @@
                       <select id="audio" class="form-select rounded-md shadow-sm w-full">
                         <option value="">--เลือก--</option>
 
-                        
-
-                        
-
                         <option value="MIX เพลงโรงเรียน 30 นาที verใหม่_Compress.mp3">MIX เพลงโรงเรียน 30 นาที</option>
                         <option value="https://drive.google.com/uc?id=12fI6nxPtfA02otCPcav6-vlzKNU9xtag">Acoustic มาร์ชบวร</option>
 
                         <option value="ปชส_สนาม1.mp3">เข้าแถวสนาม</option>
                         <option value="ปชส_ตึกวชิ1.mp3">เข้าแถวตึกวชิฯ</option>
                          <option value="ปชส new final _mixdown1.mp3">เข้าแถว (ไม่มีเสียงประชาสัมพันธ์)</option>
-                        
                         <option value="https://drive.google.com/uc?id=1l3mRdi48yrKeh2PiGhFxyIIhRd3IFP6X">เข้าแถว กิจกรรมรุ่งอรุณ</option>
+
+
                         <!-- <option value="https://drive.google.com/uc?id=1d3_p8r7qOgLYW7Du69bz1fdmQojV3u-h">เข้าแถว วันลูกเสือไทย</option>
-                        <option value="https://drive.google.com/uc?id=1zQjE9dGL2fxROOJ4f5m64uo9y9u8eFr2">เข้าแถว วันไหว้ครู</option> -->
-                        
-                        <!-- <option value="https://drive.google.com/uc?id=1UyjCju07DBmt50OsBaasjcxlJGQfCjS5">เข้าแถวสนาม ~ สัปดาห์วันแม่</option>
-                        <option value="https://drive.google.com/uc?id=1PoaHDS-wlXUjOXLQKqNyD1-0NYWsfgBT">เข้าแถวตึกวชิฯ ~ สัปดาห์วันแม่</option> -->
-                        <!-- <option value="https://drive.google.com/uc?id=1QemGU3oOvEvSCAR4P5C14vVOtilsN-WQ">MIX เพลงสัปดาห์วันแม่ 30 นาที</option> -->
+                        <option value="https://drive.google.com/uc?id=1zQjE9dGL2fxROOJ4f5m64uo9y9u8eFr2">เข้าแถว วันไหว้ครู</option>
+                        <option value="https://drive.google.com/uc?id=1UyjCju07DBmt50OsBaasjcxlJGQfCjS5">เข้าแถวสนาม ~ สัปดาห์วันแม่</option>
+                        <option value="https://drive.google.com/uc?id=1PoaHDS-wlXUjOXLQKqNyD1-0NYWsfgBT">เข้าแถวตึกวชิฯ ~ สัปดาห์วันแม่</option>
+                        <option value="https://drive.google.com/uc?id=1QemGU3oOvEvSCAR4P5C14vVOtilsN-WQ">MIX เพลงสัปดาห์วันแม่ 30 นาที</option> -->
                       </select>
 
-
-                    </div> <br />
+                    </div> <br/>
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                       onclick="scheduleAudio()">ตั้งเวลาเปิด</button>
 
-
                     <button type="button" class="bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
                       onclick="stopAudio()">หยุดเล่น</button>
-
-                      <!-- <button type="button" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
-                      onclick="snow()">Effects !</button> -->
-
                   </center>
                 </form>
-                <br />
+                <br/>
                 <center><audio id="audio-player" controls></audio></center>
                 <br>
                 <marquee behavior="" direction="" id="alert-text"></marquee>
@@ -270,7 +264,7 @@
           <div
             class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-              <h6 class="dark:text-white">[เมนู] : สถานะระบบ</h6>
+              <h6 class="dark:text-white">[เมนู] : สถานะระบบ <span class="blink" id="status">🟢 (Available)</span></h6>
             </div>
             <div role="alert" style="margin-left: 20px; margin-right: 20px; margin-top: 25px;">
               <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
@@ -279,16 +273,16 @@
               <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
                 <p id="alert-text"></p>
               </div>
-            </div>
+            </div> <br/>
 
-            <div role="alert" style="margin-left: 20px; margin-right: 20px; margin-top: 25px; margin-bottom: 40px;">
+            <!-- <div role="alert" style="margin-left: 20px; margin-right: 20px; margin-top: 25px; margin-bottom: 40px;">
               <div class="bg-yellow-500 text-white font-bold rounded-t px-4 py-2">
                 📌 ขณะนี้ระบบ :
               </div>
               <div class="border border-t-0 border-yellow-400 rounded-b bg-yellow-100 px-4 py-3 text-yellow-700">
                 <p id="warning-text"></p>
               </div>
-            </div>
+            </div> -->
 
           </div>
         </div>
