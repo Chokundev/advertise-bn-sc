@@ -41,21 +41,22 @@
     }
 
     .blink {
-        animation: blink-animation 1s steps(5, start) infinite;
-        -webkit-animation: blink-animation 1s steps(5, start) infinite;
-      }
-      @keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-      @-webkit-keyframes blink-animation {
-        to {
-          visibility: hidden;
-        }
-      }
-  </style>
+      animation: blink-animation 1s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    }
 
+    @keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+
+    @-webkit-keyframes blink-animation {
+      to {
+        visibility: hidden;
+      }
+    }
+  </style>
 
   <div><img src="./assets/img/advertise-bg2.png" class="absolute max-w-full" alt="" height="10%"></div>
   <!-- sidenav  -->
@@ -119,14 +120,10 @@
             href="https://bn.ac.th">
             <div
               class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-
             </div>
             <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">เว็บโรงเรียน</span>
           </a>
         </li>
-
-        
-
   </aside>
 
   <!-- end sidenav -->
@@ -147,7 +144,6 @@
               class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']"
               aria-current="page">ระบบจัดการเสียงประชาสัมพันธ์</li>
           </ol>
-
         </nav>
 
         <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
@@ -168,11 +164,8 @@
               <li class="flex items-center px-4">
                 <a href="javascript:;" class="p-0 text-sm text-white transition-all ease-nav-brand">
                   <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
-
                 </a>
               </li>
-
-
             </ul>
           </div>
         </div>
@@ -186,7 +179,8 @@
           <div
             class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-              <h6 class="dark:text-white">[เมนู] : ระบบตั้งเวลาเปิดเพลง <span class="blink" id="status">🟢 (Available)</span></h6> <br />
+              <h6 class="dark:text-white">[เมนู] : ระบบตั้งเวลาเปิดเพลง <span class="blink" id="status">🟢
+                  (Available)</span></h6> <br />
               <center>
                 <div
                   class="border border border-yellow-400 rounded-b bg-yellow-100 px-1 py-1 text-yellow-700 rounded-lg mx-auto"
@@ -206,13 +200,11 @@
             </div>
             <div class="flex-auto px-0 pt-0 pb-2">
               <div class="container mx-auto my-8 bg-neutral-500	 rounded-lg">
-
                 <hr />
                 <form>
                   <center>
                     <div class="mb-4">
                       <!-- <h1 style="font-size: 24px;"><strong>7 - 11 สิงหาคม สัปดาห์วันแม่ เปิดไฟล์เพลงตามลำดับ</strong></h1> -->
-                      
                       <br>
                       <label for="time" class="block text-gray-700 font-bold mb-2">ระบุเวลาที่ต้องการเปิด :</label>
                       <input type="time" id="time" class="form-select rounded-md shadow-sm w-full">
@@ -225,22 +217,29 @@
                         <option value="">--เลือก--</option>
 
                         <option value="MIX เพลงโรงเรียน 30 นาที verใหม่_Compress.mp3">MIX เพลงโรงเรียน 30 นาที</option>
-                        <option value="https://drive.google.com/uc?id=12fI6nxPtfA02otCPcav6-vlzKNU9xtag">Acoustic มาร์ชบวร</option>
+                        <option value="https://drive.google.com/uc?id=12fI6nxPtfA02otCPcav6-vlzKNU9xtag">Acoustic
+                          มาร์ชบวร</option>
 
                         <option value="ปชส_สนาม1.mp3">เข้าแถวสนาม</option>
                         <option value="ปชส_ตึกวชิ1.mp3">เข้าแถวตึกวชิฯ</option>
-                         <option value="ปชส new final _mixdown1.mp3">เข้าแถว (ไม่มีเสียงประชาสัมพันธ์)</option>
-                        <option value="https://drive.google.com/uc?id=1l3mRdi48yrKeh2PiGhFxyIIhRd3IFP6X">เข้าแถว กิจกรรมรุ่งอรุณ</option>
+                        <option value="ปชส new final _mixdown1.mp3">เข้าแถว (ไม่มีเสียงประชาสัมพันธ์)</option>
+                        <option value="https://drive.google.com/uc?id=1l3mRdi48yrKeh2PiGhFxyIIhRd3IFP6X">เข้าแถว
+                          กิจกรรมรุ่งอรุณ</option>
 
 
-                        <!-- <option value="https://drive.google.com/uc?id=1d3_p8r7qOgLYW7Du69bz1fdmQojV3u-h">เข้าแถว วันลูกเสือไทย</option>
-                        <option value="https://drive.google.com/uc?id=1zQjE9dGL2fxROOJ4f5m64uo9y9u8eFr2">เข้าแถว วันไหว้ครู</option>
-                        <option value="https://drive.google.com/uc?id=1UyjCju07DBmt50OsBaasjcxlJGQfCjS5">เข้าแถวสนาม ~ สัปดาห์วันแม่</option>
-                        <option value="https://drive.google.com/uc?id=1PoaHDS-wlXUjOXLQKqNyD1-0NYWsfgBT">เข้าแถวตึกวชิฯ ~ สัปดาห์วันแม่</option>
-                        <option value="https://drive.google.com/uc?id=1QemGU3oOvEvSCAR4P5C14vVOtilsN-WQ">MIX เพลงสัปดาห์วันแม่ 30 นาที</option> -->
+                        <option value="https://drive.google.com/uc?id=1d3_p8r7qOgLYW7Du69bz1fdmQojV3u-h">เข้าแถว
+                          วันลูกเสือไทย</option>
+                        <option value="https://drive.google.com/uc?id=1zQjE9dGL2fxROOJ4f5m64uo9y9u8eFr2">เข้าแถว
+                          วันไหว้ครู</option>
+                        <option value="https://drive.google.com/uc?id=1UyjCju07DBmt50OsBaasjcxlJGQfCjS5">เข้าแถวสนาม ~
+                          สัปดาห์วันแม่</option>
+                        <option value="https://drive.google.com/uc?id=1PoaHDS-wlXUjOXLQKqNyD1-0NYWsfgBT">เข้าแถวตึกวชิฯ
+                          ~ สัปดาห์วันแม่</option>
+                        <option value="https://drive.google.com/uc?id=1QemGU3oOvEvSCAR4P5C14vVOtilsN-WQ">MIX
+                          เพลงสัปดาห์วันแม่ 30 นาที</option>
                       </select>
 
-                    </div> <br/>
+                    </div> <br />
                     <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                       onclick="scheduleAudio()">ตั้งเวลาเปิด</button>
 
@@ -248,7 +247,7 @@
                       onclick="stopAudio()">หยุดเล่น</button>
                   </center>
                 </form>
-                <br/>
+                <br />
                 <center><audio id="audio-player" controls></audio></center>
                 <br>
                 <marquee behavior="" direction="" id="alert-text"></marquee>
@@ -273,21 +272,10 @@
               <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
                 <p id="alert-text"></p>
               </div>
-            </div> <br/>
-
-            <!-- <div role="alert" style="margin-left: 20px; margin-right: 20px; margin-top: 25px; margin-bottom: 40px;">
-              <div class="bg-yellow-500 text-white font-bold rounded-t px-4 py-2">
-                📌 ขณะนี้ระบบ :
-              </div>
-              <div class="border border-t-0 border-yellow-400 rounded-b bg-yellow-100 px-4 py-3 text-yellow-700">
-                <p id="warning-text"></p>
-              </div>
-            </div> -->
-
+            </div> <br />
           </div>
         </div>
       </div>
-
     </div>
 
     <footer class="pt-4">
@@ -305,13 +293,13 @@
               งานประชาสัมพันธ์ คณะกรรมการนักเรียน
             </div>
           </div>
-
         </div>
       </div>
     </footer>
     </div>
     <!-- end cards -->
   </main>
+
   <div fixed-plugin>
     <a fixed-plugin-button
       class="fixed px-4 py-2 text-xl bg-white shadow-lg cursor-pointer bottom-8 right-8 z-990 rounded-circle text-slate-700">
