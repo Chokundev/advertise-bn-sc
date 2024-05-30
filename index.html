@@ -25,7 +25,6 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="404.css">
 
 </head>
 
@@ -34,8 +33,16 @@
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&display=swap');
 
+        @font-face {
+            font-family: 'Sao_Chingcha';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Sao_Chingcha'), url('/fonts/SaoChingcha-Regular.otf') format('truetype');
+        }
+
+
         body {
-            font-family: 'Chakra Petch', sans-serif;
+            font-family: 'Sao_Chingcha', sans-serif;
         }
 
         .blink {
@@ -121,45 +128,301 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <!-- <h1 class="h3 mb-0 text-gray-800 text-weight-bold">[เมนู] : ระบบตั้งเวลาเปิดเพลง</h1> -->
+                        <h1 class="h3 mb-0 text-gray-800 text-weight-bold">[เมนู] : ระบบตั้งเวลาเปิดเพลง</h1>
                     </div>
-
-                    <section class="page_404">
-                        <div class="container">
-                            <div class="row">	
-                            <div class="col-sm-12 ">
-                            <div class="col-sm-10 col-sm-offset-1  text-center">
-                            <div class="four_zero_four_bg">
-                                <h1 class="text-center ">404</h1>
-                            
-                            
-                            </div>
-                            
-                            <div class="contant_box_404">
-                            <h3 class="h2">
-                            ขออภัย ปิดปรับปรุงระบบชั่วคราว
-                            </h3>
-                            
-                            <p>กรุณาย้ายไปใช้โปรแกรม Virtual DJ ในเครื่องของท่าน</p>
-                            
-                            <!-- <a href="" class="link_404">Go to Home</a> -->
-                        </div>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
-                    </section>
 
 
 
                     <!-- Content Row -->
 
-                    
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-4 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">⏲️ : เวลาระบบ</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <span>เวลาขณะนี้ :</span>
+                                    <a href="https://time.is/Nonthaburi,_Nonthaburi" id="time_is_link" rel="nofollow"
+                                        style="font-size:36px"></a>
+                                    <span id="Nonthaburi__Nonthaburi_z40a"
+                                        style="font-size:36px; font-family: 'Chakra Petch', sans-serif; text-align: center;"></span>
+
+                                    <script src="//widget.time.is/t.js"></script>
+
+                                    <script>
+                                        time_is_widget.init({ Nonthaburi__Nonthaburi_z40a: {} });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">📌 สถานะตัวเล่นเพลงที่ 1 </h6> 
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <p id="status-player1"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">📌 สถานะตัวเล่นเพลงที่ 2 </h6> 
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <p id="status-player2"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
                         
                     
 
                     <!-- Content Row -->
-                    
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">🎶 ตัวเล่นเพลงที่ 1 <span class="blink" id="status">🟢 (Available)</span></h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <center>
+                                            <div class="mb-4">
+
+                                                <br>
+                                                <label for="time"
+                                                    class="block text-gray-700 font-bold mb-2">ระบุเวลาที่ต้องการเปิด
+                                                    :</label>
+                                                <input type="time" id="time"
+                                                    class="form-select rounded-md shadow-sm w-full">
+                                            </div>
+                                            <br />
+                                            <div class="mb-4">
+                                                <label for="audio"
+                                                    class="block text-gray-700 font-bold mb-2">เลือกไฟล์เสียงที่ต้องการเปิด
+                                                    :</label>
+                                                <select id="audio" class="form-select rounded-md shadow-sm w-full">
+                                                    <option value="">--เลือก--</option>
+                                                    <option value="ปชส เข้าแถวสนาม3.mp3">เข้าแถวสนาม</option>
+                                                    <option value="ปชส เข้าแถวห้องประชุม3.mp3">เข้าแถวตึกวชิฯ</option>
+                                                    <option value="MIX เพลงโรงเรียน 30 นาที verใหม่_Compress.mp3">
+                                                        021-MIX เพลงโรงเรียน
+                                                    </option>
+
+                                                    <option value="https://drive.lienuc.com/uc?id=1f6qwv4EnTdQ0Swki5k7WHhd6wQ7fn9RE">
+                                                        022-MIX คาบคุณธรรม รุ่งอรุณ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1JsuP0ctVZwUVzlY3et9pfPwAwu2Hce6M">
+                                                        023-MIX สอบปลายภาค
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1B0hd5sHMb_dqAzzghZswAaMsJ5QIApyI">
+                                                        024-MIX วันไหว้ครู
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1JdZCfLKBL3pe7-gLyOSldEMzIUhfiLdP">
+                                                        025-MIX สัปดาห์วันแม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1oKo--hh8UiWy9qwIarO1hMSnaDRfpVA2">
+                                                        026-MIX วันอาเซียน
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1iaymY2xtV-NbCWrP6eKSNhirva8TFyrz">
+                                                        027-MIX วันลูกเสือไทย
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1HVQv98P8H39OqqIyVpr_v7oDpG1QbSxe">
+                                                        028-MIX อำลาครูเกษียณ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1K24GHGH_Hblam-mFzFsfJ5WOhK2CgHu3">
+                                                        029-MIX เพลงลอยกระทง
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1tMRoYpZ-y664sseBp5qsGwasyO4gWqv2">
+                                                        0210-MIX สัปดาห์วันพ่อ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1RHaw01v-X5jO-4LJWBIaZpu9UitrQjYJ">
+                                                        0211-MIX เพลงสัปดาห์วันพ่อv2
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1QUYPdYZz_rJZCeu84GOropYbUPpH0i_f">
+                                                        0212-MIX เพลงสัปดาห์วันพ่อv3
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1QgzIenH9OkomsajJvuRLNyP3Cc6Iq1de">
+                                                        0213-MIX เพลงสัปดาห์วันคริสต์มาส
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1UnYIZU6soF-j4RkYQz52RKEtOXXMcuqe">
+                                                        0214-MIX เพลงสัปดาห์วันคริสต์มาส วันปีใหม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1piLfXSYYRYXSvjG71IU2_1Zis-oxms3x">
+                                                        0215-MIX เพลงสัปดาห์ปีใหม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1V6vvwCUea5p1GF1--7raYsr0BY73LQW9">
+                                                        0216-MIX เพลงวันเด็กแห่งขาติ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1laczO6e3jaDvwMW1Bqd2OZZOFvFG_v9Y">
+                                                        0217-MIX เพลงสัปดาห์วันครู
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1eSPH1PxzEvqjZ3fO1cKl0e-0b4EakFkH">
+                                                        0218-MIX เพลงสัปดาห์วันตรุษจีน
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1yzwA6HoXoq6Dt7uQWjzLnGKZMk6zOJSz">
+                                                        0219-MIX เพลงกิจกรรมน้องส่งพี่
+                                                    </option>
+                                                    
+
+
+
+
+                                                   
+                                                    
+
+                                                </select>
+
+                                            </div> <br />
+                                            <button type="button"
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                                onclick="scheduleAudio()">ตั้งเวลาเปิด</button>
+
+                                            <button type="button"
+                                                class="bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+                                                onclick="stopAudio()">หยุดเล่น</button>
+                                        </center>
+                                    </form>
+                                    <br />
+                                    <center><audio id="audio-player" crossorigin="anonymous" controls></audio></center>
+                                    <br>
+                                    <marquee behavior="" direction="" id="alert-text"></marquee>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">🎶 ตัวเล่นเพลงที่ 2 <span class="blink" id="status1">🟢 (Available)</span></h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <center>
+                                            <div class="mb-4">
+
+                                                <br>
+                                                <label for="time"
+                                                    class="block text-gray-700 font-bold mb-2">ระบุเวลาที่ต้องการเปิด
+                                                    :</label>
+                                                <input type="time" id="time1"
+                                                    class="form-select rounded-md shadow-sm w-full">
+                                            </div>
+                                            <br />
+                                            <div class="mb-4">
+                                                <label for="audio"
+                                                    class="block text-gray-700 font-bold mb-2">เลือกไฟล์เสียงที่ต้องการเปิด
+                                                    :</label>
+                                                <select id="audio1" class="form-select rounded-md shadow-sm w-full">
+                                                    <option value="">--เลือก--</option>
+                                                    <option value="ปชส เข้าแถวสนาม3.mp3">เข้าแถวสนาม</option>
+                                                    <option value="ปชส เข้าแถวห้องประชุม3.mp3">เข้าแถวตึกวชิฯ</option>
+                                                    <option value="MIX เพลงโรงเรียน 30 นาที verใหม่_Compress.mp3">
+                                                        021-MIX เพลงโรงเรียน
+                                                    </option>
+
+                                                    <option value="https://drive.lienuc.com/uc?id=1f6qwv4EnTdQ0Swki5k7WHhd6wQ7fn9RE">
+                                                        022-MIX คาบคุณธรรม รุ่งอรุณ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1JsuP0ctVZwUVzlY3et9pfPwAwu2Hce6M">
+                                                        023-MIX สอบปลายภาค
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1B0hd5sHMb_dqAzzghZswAaMsJ5QIApyI">
+                                                        024-MIX วันไหว้ครู
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1JdZCfLKBL3pe7-gLyOSldEMzIUhfiLdP">
+                                                        025-MIX สัปดาห์วันแม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1oKo--hh8UiWy9qwIarO1hMSnaDRfpVA2">
+                                                        026-MIX วันอาเซียน
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1iaymY2xtV-NbCWrP6eKSNhirva8TFyrz">
+                                                        027-MIX วันลูกเสือไทย
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1HVQv98P8H39OqqIyVpr_v7oDpG1QbSxe">
+                                                        028-MIX อำลาครูเกษียณ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1K24GHGH_Hblam-mFzFsfJ5WOhK2CgHu3">
+                                                        029-MIX เพลงลอยกระทง
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1tMRoYpZ-y664sseBp5qsGwasyO4gWqv2">
+                                                        0210-MIX สัปดาห์วันพ่อ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1RHaw01v-X5jO-4LJWBIaZpu9UitrQjYJ">
+                                                        0211-MIX เพลงสัปดาห์วันพ่อv2
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1QUYPdYZz_rJZCeu84GOropYbUPpH0i_f">
+                                                        0212-MIX เพลงสัปดาห์วันพ่อv3
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1QgzIenH9OkomsajJvuRLNyP3Cc6Iq1de">
+                                                        0213-MIX เพลงสัปดาห์วันคริสต์มาส
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1UnYIZU6soF-j4RkYQz52RKEtOXXMcuqe">
+                                                        0214-MIX เพลงสัปดาห์วันคริสต์มาส วันปีใหม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1piLfXSYYRYXSvjG71IU2_1Zis-oxms3x">
+                                                        0215-MIX เพลงสัปดาห์ปีใหม่
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1V6vvwCUea5p1GF1--7raYsr0BY73LQW9">
+                                                        0216-MIX เพลงวันเด็กแห่งขาติ
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1laczO6e3jaDvwMW1Bqd2OZZOFvFG_v9Y">
+                                                        0217-MIX เพลงสัปดาห์วันครู
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1eSPH1PxzEvqjZ3fO1cKl0e-0b4EakFkH">
+                                                        0218-MIX เพลงสัปดาห์วันตรุษจีน
+                                                    </option>
+                                                    <option value="https://drive.lienuc.com/uc?id=1yzwA6HoXoq6Dt7uQWjzLnGKZMk6zOJSz">
+                                                        0219-MIX เพลงกิจกรรมน้องส่งพี่
+                                                    </option>
+
+                                                </select>
+
+                                            </div> <br />
+                                            <button type="button"
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                                onclick="scheduleAudio1()">ตั้งเวลาเปิด</button>
+
+                                            <button type="button"
+                                                class="bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 rounded"
+                                                onclick="stopAudio1()">หยุดเล่น</button>
+                                        </center>
+                                    </form>
+                                    <br />
+                                    <center><audio id="audio-player1" controls></audio></center>
+                                    <br>
+                                    <marquee behavior="" direction="" id="alert-text1"></marquee>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 
                 <!-- /.container-fluid -->
